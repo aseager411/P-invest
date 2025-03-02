@@ -3,7 +3,7 @@
 <body>
     <h2>Risk Tolerance</h2>
     
-    </div>
+   
     <input type="range" min="1" max="10" value="5" id="slider" style="width: 200px">
     <div>Value: <span id="value">5</span></div>
     <button onclick="save()">Save</button>
@@ -12,19 +12,7 @@
 <script>
 
 
-    try {
-        const res = await fetch(`/api/risk-tolerance?user_id=${encodeURIComponent(userId)}`);
-        if(!res.ok) throw new Error('Load failed');
-        
-        const data = await res.json();
-        slider.value = data.risk_tolerance;
-        value.textContent = data.risk_tolerance;
-        status.textContent = 'Loaded successfully';
-    } catch(e) {
-        status.textContent = 'Error loading: ' + e.message;
-    }
-}
-
+    
 // Update display while sliding
 slider.oninput = () => value.textContent = slider.value;
 

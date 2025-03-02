@@ -2,38 +2,64 @@
 <html>
 <body>
     <h2>Risk Tolerance</h2>
-    <input type="range" min="1" max="10" value="8" id="slider" style="width: 200px">
-    <div>Value: <span id="value">8</span></div>
+    <div>
+        <label for="userId">User ID: </label>
+        <input type="text" id="userId" placeholder="Enter your user ID">
+        <button onclick="load()">Load</button>
+    </div>
+    <input type="range" min="1" max="10" value="5" id="slider" style="width: 200px">
+    <div>Value: <span id="value">5</span></div>
     <button onclick="save()">Save</button>
     <div id="status"></div>
 
 <script>
-// Load initial value
-(async () => {
-    try {
-        const res = await fetch('/api/risk-tolerance')
-        const {value} = await res.json()
-        slider.value = value
-        value.textContent = value
-    } catch(e) {
-        status.textContent = 'Error loading'
+// Load user's saved value
+async function load() {
+    const userId = document.getElementById('userId').value;
+    if(!userId) {
+        status.textContent = 'Please enter a User ID';
+        return;
     }
-})()
+
+    try {
+        const res = await fetch(`/api/risk-tolerance?user_id=${encodeURIComponent(userId)}`);
+        if(!res.ok) throw new Error('Load failed');
+        
+        const data = await res.json();
+        slider.value = data.risk_tolerance;
+        value.textContent = data.risk_tolerance;
+        status.textContent = 'Loaded successfully';
+    } catch(e) {
+        status.textContent = 'Error loading: ' + e.message;
+    }
+}
 
 // Update display while sliding
-slider.oninput = () => value.textContent = slider.value
+slider.oninput = () => value.textContent = slider.value;
 
 // Save function
 async function save() {
+    const userId = document.getElementById('userId').value;
+    if(!userId) {
+        status.textContent = 'Please enter a User ID';
+        return;
+    }
+
     try {
         const res = await fetch('/api/risk-tolerance', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({value: +slider.value})
-        })
-        status.textContent = res.ok ? 'Saved!' : 'Error saving'
+            body: JSON.stringify({
+                user_id: userId,
+                value: +slider.value
+            })
+        });
+        
+        if(!res.ok) throw new Error('Save failed');
+        const data = await res.json();
+        status.textContent = `Saved! Current value: ${data.stored_value}`;
     } catch(e) {
-        status.textContent = 'Failed to save'
+        status.textContent = 'Failed to save: ' + e.message;
     }
 }
 </script>

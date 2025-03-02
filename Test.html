@@ -2,43 +2,41 @@
 <html>
 <body>
     <h2>Risk Tolerance</h2>
-    
-   
     <input type="range" min="1" max="10" value="5" id="slider" style="width: 200px">
     <div>Value: <span id="value">5</span></div>
     <button onclick="save()">Save</button>
     <div id="status"></div>
 
 <script>
+// Load initial value on page load
+(async () => {
+    try {
+        const res = await fetch('/api/risk-tolerance')
+        const {risk_tolerance} = await res.json()
+        slider.value = risk_tolerance
+        value.textContent = risk_tolerance
+    } catch(e) {
+        status.textContent = 'Error loading: ' + e.message
+    }
+})()
 
-
-    
 // Update display while sliding
-slider.oninput = () => value.textContent = slider.value;
+slider.oninput = () => value.textContent = slider.value
 
 // Save function
 async function save() {
-    const userId = document.getElementById('userId').value;
-    if(!userId) {
-        status.textContent = 'Please enter a User ID';
-        return;
-    }
-
     try {
         const res = await fetch('/api/risk-tolerance', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                user_id: userId,
-                value: +slider.value
-            })
-        });
+            body: JSON.stringify({value: +slider.value})
+        })
         
-        if(!res.ok) throw new Error('Save failed');
-        const data = await res.json();
-        status.textContent = `Saved! Current value: ${data.stored_value}`;
+        if(!res.ok) throw new Error('Save failed')
+        const data = await res.json()
+        status.textContent = `Saved! Current value: ${data.stored_value}`
     } catch(e) {
-        status.textContent = 'Failed to save: ' + e.message;
+        status.textContent = 'Failed to save: ' + e.message
     }
 }
 </script>

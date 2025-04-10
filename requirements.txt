@@ -1,0 +1,16 @@
+# Core PyTorch for macOS (CPU build, works on Apple Silicon too)
+torch==2.2.2
+torchaudio==2.2.2
+torchvision==0.17.2
+
+# Downgraded numpy (PyTorch not yet fully compatible with NumPy 2.x)
+numpy==1.26.4
+
+# Hugging Face stack
+transformers==4.51.1
+datasets==3.5.0
+accelerate==1.6.0
+peft==0.15.1
+
+# Optional but recommended for logging/progress/debug
+tqdm

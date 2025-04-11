@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "P-invest",
+  "version": "1.0",
+  "permissions": ["storage"],
+  "browser_action": {
+    "default_popup": "index.html",
+    "permissions": ["storage"]
+  }
+}

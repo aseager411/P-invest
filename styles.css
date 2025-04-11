@@ -1,0 +1,317 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+#logo {
+  height: 450px;
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  background-image: url(download-1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-bottom: none;
+}
+#title {
+  /* color: #008000; */
+  font-style: italic;
+  font-size: 60px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.montserrat-<uniquifier > {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+#myProgress {
+  margin-top: -150px;
+  width: 40%;
+  background-color: grey;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  /* background-color: #008000; */
+  border-radius: 25px;
+  background-image: linear-gradient(to right, lightgrey, #008000);
+}
+
+#loading {
+  font-family: "Montserrat", sans-serif;
+  color: lightslategrey;
+}
+
+#welcome {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  /* width: 33%; */
+  margin: 0 auto;
+  position: relative;
+  left: -20%;
+  text-align: center;
+}
+
+#login {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  width: 50%;
+  font-size: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* login button */
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 60%;
+  padding: 12px 20px;
+  /* margin: 0 auto; */
+  display: block;
+  border: none;
+  box-sizing: border-box;
+  gap: 10px;
+}
+
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="email"]:hover {
+  background-color: #e8e7e6; /* Change to green on hover */
+}
+
+.label-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+}
+
+/* tung changed this name*/
+.login-button {
+  background-image: linear-gradient(to right, lightgrey, #008000);
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  border-radius: 25px;
+  margin: 0 auto;
+  margin-top: 30px;
+  display: block;
+}
+
+.bar {
+  width: 60%;
+  height: 5px;
+  background-image: linear-gradient(to right, lightgrey, #008000);
+  margin: 0 auto;
+  display: block;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.create {
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  font-size: 15px;
+  color: rgb(164, 170, 176);
+}
+
+a {
+  text-decoration: none;
+}
+
+#create-header {
+  font-size: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  margin-left: 0 auto;
+  margin-right: 0 auto;
+  text-align: center;
+}
+
+p {
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  margin-left: 0 auto;
+  margin-right: 0 auto;
+  text-align: center;
+}
+
+.wrapper {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 0 auto;
+  display: block;
+  border: none;
+  box-sizing: border-box;
+}
+
+a {
+  color: #008000;
+}
+
+form label {
+  color: var(#008000);
+}
+
+/* chatbot */
+.chatbot-row {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  gap: 10px;
+}
+.chatbot-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.chatbot-user-img {
+  width: 6vw;
+  height: 6vw;
+  border-radius: 50%;
+  background: transparent;
+  display: block;
+  object-fit: contain;
+  object-fit: 70%;
+}
+.chatbot-logo-img {
+  width: 10vw;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  margin:auto;
+  align-items: center;
+  margin-top: -5px;
+}
+.chatbot-button {
+  display: flex;
+  outline: none;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  padding: 0;
+  position: fixed;
+  right: 10px;
+  margin-top: 20px;
+}
+.chatbot-button:focus {
+  outline: none;
+}
+.chatbot-button:active {
+  outline: none;
+}
+.chatbot-header-container {
+  background-color: #f7f7f7;
+  padding: 15px;
+  margin-bottom: 250px;
+  /* position: fixed; */
+}
+.chatbot-header-text {
+  font-size: 3vh;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+.chatbot-input{
+  width: 85%;
+  height: 150px;
+  border-radius: 25px;
+  padding: 10px 15px;
+  background-color: white;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  margin-left: 6.5%;
+  margin-right: 6.5%;
+  border-color: #008000;
+  border-width: 2px;
+  border-style: solid;
+  vertical-align: top;
+  margin-bottom: 15px;
+  resize: none;
+}
+.chatbot-input:focus {
+  outline: none;
+  border-color: #008000;
+}
+.chatbot-input:active {
+  outline: none;
+  border-color: #008000;
+}
+.chatbot-input::placeholder {
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  top: 10px;
+  left: 15px;
+  position: absolute;
+}
+.chatbot-bold-text {
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  justify-content: left;
+  margin-left: 8%;
+  margin-bottom: -8px;
+  font-size: 22px;
+}
+.chatbot-italic-text {
+  font-style: italic;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  justify-content: left;
+  margin-left: 8%;
+  font-size: 22px;
+}
+.chatbot-options{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: -2%;
+}
+.chatbot-options button{
+  border-radius: 25px;
+  border-color: #008000;
+  border-style: solid;
+  border-width: 2px;
+  background-color: white;
+}
+.chatbot-options button:focus {
+  outline: none;
+  border-color: #008000;
+}
+.chatbot-options button:active {
+  outline: none;
+  border-color: #008000;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>p-invest</title>
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="chatbot-header-container">
+      <div class="container">
+        <div class="chatbot-row">
+          <div class="chatbot-col">
+            <img src="logo.png" alt="Logo" class="chatbot-logo-img"/>
+            <h2 class="chatbot-header-text">AI Chat Bot</h2>
+          </div>
+          <button class="chatbot-button">
+            <img src="user.png" alt="User Icon" class="chatbot-user-img"/>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <p class="chatbot-bold-text">Welcome to</p>
+    <p class="chatbot-italic-text">Fidelity +</p>
+    <textarea class="chatbot-input" placeholder="Ask anything"></textarea>
+    <!-- on enter event listener -->
+
+    <div class="chatbot-options">
+      <button class="commodities">Commodities</button>
+      <button class="technology">Technology</button>
+      <button class="healthcare">Healthcare</button>
+      <button class="crypto">Crypto</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

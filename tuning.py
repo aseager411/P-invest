@@ -15,9 +15,11 @@ if tokenizer.pad_token is None:
     
 model = AutoModelForCausalLM.from_pretrained(
     model_id,
-    torch_dtype=torch.float16,
-    device_map="auto"
+    torch_dtype=torch.float32,
+    low_cpu_mem_usage=False, 
+    device_map=None  
 )
+
 
 # Load and tokenize the articles
 dataset = load_dataset("json", data_files="data/articles.jsonl")
@@ -50,7 +52,7 @@ training_args = TrainingArguments(
     logging_steps=10,  # Log loss and metrics every 10 training steps (good for monitoring progress)
     save_strategy="epoch",  # Save model checkpoint at the end of each training epoch
     eval_strategy="no",  # No evaluation during training (you can change to "steps" or "epoch" if you have a validation set)
-    fp16=True,  # Use 16-bit floating point precision (mixed precision) to speed up training and reduce memory use
+    fp16=False,
 )
 
 trainer = Trainer(

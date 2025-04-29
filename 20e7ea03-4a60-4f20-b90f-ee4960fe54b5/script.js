@@ -21,12 +21,3 @@ function move() {
 function chatbot() {
   location.replace("chatbot.html");
 }
-
-function preferences() {
-  location.replace("sign_up_preferences.html");
-}
-
-function menu() {
-  var x = document.getElementById("menu");
-  x.style.display = "block";
-}

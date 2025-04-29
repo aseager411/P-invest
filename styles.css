@@ -20,10 +20,10 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-.montserrat-<uniquifier > {
+.montserrat-uniquifier > {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: weight;
   font-style: normal;
 }
 
@@ -85,7 +85,7 @@ input[type="email"] {
 input[type="text"]:hover,
 input[type="password"]:hover,
 input[type="email"]:hover {
-  background-color: #e8e7e6; /* Change to green on hover */
+  background-color: #e8e7e6;
 }
 
 .label-wrapper {
@@ -98,7 +98,6 @@ input[type="email"]:hover {
   position: relative;
 }
 
-/* tung changed this name*/
 .login-button {
   background-image: linear-gradient(to right, lightgrey, #008000);
   color: white;
@@ -129,7 +128,8 @@ button:hover {
   margin: 24px 0 12px 0;
 }
 
-.container {
+/* tung changed this name */
+.login-container {
   padding: 16px;
 }
 
@@ -143,6 +143,7 @@ span.create {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 #create-header {
@@ -181,49 +182,111 @@ form label {
 }
 
 /* chatbot */
-.chatbot-row {
-  display: flex;
-  justify-content: center;
+.chatbot-header-container {
+  background-color: #f7f7f7;
+  padding: 0.5rem 1rem;
+  margin-bottom: 17rem;
   position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;
 }
-.chatbot-col {
+.chatbot-header-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+.chatbot-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.chatbot-header-col {
+  display: flex;
+  align-items: center;
+}
+.chatbot-center-container {  
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 0.5rem;
+  flex: 1;
+}
+.chatbot-popup-container {
+  position: relative;
+  max-width: 20rem;
+  margin-right: 1rem;
+}
+.chatbot-popup {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #f7f7f7;
+  border-radius: 0.5px;
+  width: 11rem;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden
+}
+.chatbot.popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+  font-family: "Montserrat", sans-serif;
+}
+.chatbot-popup-name {
+  padding: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  text-align: center;
+}
+.chatbot-gradient-bar {
+  width: 95%;
+  height: 0.25rem;
+  background: linear-gradient(to right, #d9d9d9, #008000);
+  margin: 0 auto;
+}
+.chatbot-popup-buttons button {
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  text-align: left;
+  color: grey
 }
 .chatbot-user-img {
-  width: 6vw;
-  height: 6vw;
+  width: 3.5rem;
+  height: auto;
   border-radius: 50%;
   background: transparent;
-  display: block;
   object-fit: contain;
-  object-fit: 70%;
 }
 .chatbot-logo-img {
-  width: 10vw;
+  width: 7rem;
   height: auto;
-  display: block;
   object-fit: contain;
-  margin:auto;
-  align-items: center;
-  margin-top: -5px;
 }
 .chatbot-button {
-  display: flex;
-  outline: none;
-  width: 10vw;
-  height: 10vw;
-  border-radius: 50%;
   background: transparent;
   border: none;
   padding: 0;
-  position: fixed;
-  right: 10px;
-  margin-top: 20px;
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  position: static;
+  align-items: center;
+  justify-content: center;
 }
 .chatbot-button:focus {
   outline: none;
@@ -231,34 +294,21 @@ form label {
 .chatbot-button:active {
   outline: none;
 }
-.chatbot-header-container {
-  background-color: #f7f7f7;
-  padding: 15px;
-  margin-bottom: 250px;
-  /* position: fixed; */
-}
-.chatbot-header-text {
-  font-size: 3vh;
-  font-weight: bold;
-  color: #333;
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-}
 .chatbot-input{
   width: 85%;
-  height: 150px;
-  border-radius: 25px;
-  padding: 10px 15px;
+  height: 9.375rem;
+  border-radius: 1.5625rem;
+  padding: 0.625rem 0.9375rem;
   background-color: white;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-family: "Montserrat", sans-serif;
   margin-left: 6.5%;
   margin-right: 6.5%;
   border-color: #008000;
-  border-width: 2px;
+  border-width: 0.125rem;
   border-style: solid;
   vertical-align: top;
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
   resize: none;
 }
 .chatbot-input:focus {
@@ -270,10 +320,10 @@ form label {
   border-color: #008000;
 }
 .chatbot-input::placeholder {
-  font-size: 18px;
+  font-size: 1.5rem;
   font-family: "Montserrat", sans-serif;
-  top: 10px;
-  left: 15px;
+  top: 0.625rem;
+  left: 0.9375rem;
   position: absolute;
 }
 .chatbot-bold-text {
@@ -282,8 +332,8 @@ form label {
   display: flex;
   justify-content: left;
   margin-left: 8%;
-  margin-bottom: -8px;
-  font-size: 22px;
+  margin-bottom: -1rem;
+  font-size: 1.375rem;
 }
 .chatbot-italic-text {
   font-style: italic;
@@ -291,21 +341,26 @@ form label {
   display: flex;
   justify-content: left;
   margin-left: 8%;
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 .chatbot-options{
   display: flex;
-  gap: 10px;
+  gap: 0.625rem;
   justify-content: center;
   flex-wrap: wrap;
   margin-left: -2%;
 }
 .chatbot-options button{
-  border-radius: 25px;
+  width: 20%;
+  height: 3.5rem;
+  border-radius: 1.5625rem;
   border-color: #008000;
   border-style: solid;
-  border-width: 2px;
+  border-width: 0.125rem;
   background-color: white;
+  font-size: 1.25rem;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
 }
 .chatbot-options button:focus {
   outline: none;
@@ -315,3 +370,368 @@ form label {
   outline: none;
   border-color: #008000;
 }
+
+/* Account Settings */
+.settings-header {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  justify-content: left;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  margin-top: 1.25rem;
+  margin-left: 1.5rem;
+}
+.settings-left-arrow {
+  width: 2rem;
+  height: auto;
+  margin-top: 0rem;
+}
+.settings-header-text {
+  margin-top: 0rem;
+  color: black;
+}
+.settings-user-img {
+  width: 8rem;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+.settings-name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+.settings-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.settings-info {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin-top: 0.5rem;
+  padding: 1.5rem;
+}
+.settings-bold-text {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: #008000;
+}
+.settings-light-text {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  color: grey;
+}
+.settings-lock-img {
+  width: 1.5rem;
+  height: auto;
+  margin: 0 auto;
+}
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 2rem;
+}
+.settings-toggle-password {
+  position: absolute;
+  right: 8.5rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  background: transparent;
+  border: none;
+  margin-bottom: 0.4rem;
+}
+.settings-logout {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: auto;
+  padding: 1.5rem;
+  text-decoration: underline;
+}
+
+/* My Investments Page */
+.investment-item {
+  /* display: block; */
+  display: flex;
+  text-decoration: none;
+  margin-bottom: 4rem;
+  cursor: pointer;
+  padding: 2rem;
+}
+.investment-name-container {
+  position: absolute;
+  left: 1rem;
+  padding: 2rem;
+  transform: translateY(-50%);
+}
+.investment-symbol {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  text-align: left;
+  margin-top: 0.5rem;
+  color: #808080;
+  font-weight: semibold;
+  padding: 0.125rem;
+}
+.investment-name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  text-align: left;
+  margin-top: 0.25rem;
+  color: #808080;
+  padding: 0.125rem;
+}
+.investment-graph {
+  width: 4rem;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.investment-price-container {
+  position: absolute;
+  right: 2rem;
+  transform: translateY(-50%);
+  font-family: "Montserrat", sans-serif;
+}
+.investment-price {
+  font-size: 1.5rem;
+  color: black;
+  padding: 0.25rem;
+}
+.investment-price-change {
+  font-size: 1.25rem;
+  padding: 0.25rem;
+  text-align: left;
+}
+.positive {
+  color: green;
+}
+.negative {
+  color: red;
+}
+
+/* Investment Detail Page */
+.investment-detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: left;
+  /* margin-top: 1rem; */
+}
+.investment-detail-chart {
+  width: 85%;
+  height: auto;
+}
+.investment-detail-name-container {
+  font-family: "Montserrat", sans-serif;
+  padding: 2rem;
+  margin-top: -2rem;
+}
+.investment-detail-description {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  text-align: left;
+  margin-top: 2rem;
+  color: black;
+  padding: 0.125rem;
+  margin-left: 2rem;
+  margin-right: 1.5rem;
+}
+.investment-detail-ask {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  text-align: left;
+  margin-top: 2rem;
+  background: linear-gradient(to right, #5C21D3, #2206F9);  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0.125rem;
+  margin-left: 2rem;
+  margin-right: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* My preferences */
+.skip {
+  font-size: 30px;
+  font-weight: normal;
+}
+
+/* sliders */
+
+input.range {
+  -webkit-appearance: none;
+  /* bottom: -10px; */
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+input.range:focus {
+  outline: 0;
+}
+input.range::-moz-focus-outer {
+  border: 0;
+}
+
+input.range::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px black, 0px 0px 1px black;
+  border: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7.5px;
+}
+
+input.range::-moz-range-thumb {
+  box-shadow: 1px 1px 1px black, 0px 0px 1px black;
+  border: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+}
+input.range::-ms-thumb {
+  box-shadow: 1px 1px 1px black, 0px 0px 1px black;
+  border: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  height: 5px;
+}
+
+input.range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
+  background: #008000;
+  border-radius: 20px;
+  border: 0;
+}
+
+input.range::-moz-range-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
+  background: #008000;
+  border-radius: 20px;
+  border: 0;
+}
+
+input.range::-ms-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input.range::-ms-fill-lower,
+input.range::-ms-fill-upper {
+  background: #008000;
+  border: 0;
+  border-radius: 40px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
+}
+
+.range__tick {
+  fill: #a0a0a0;
+}
+
+.range__tick:first-child {
+  -webkit-transform: translateX(2px);
+  -moz-transform: translateX(2px);
+  -ms-transform: translateX(2px);
+  -o-transform: translateX(2px);
+  transform: translateX(2px);
+}
+.range__tick:last-child {
+  -webkit-transform: translateX(-3px);
+  -moz-transform: translateX(-3px);
+  -ms-transform: translateX(-3px);
+  -o-transform: translateX(-3px);
+  transform: translateX(-3px);
+}
+
+.range__field {
+  border: 0;
+}
+
+.range-sliders .input-slider {
+  height: 35px; /* control input height */
+  line-height: 35px; /* vertically center text */
+  font-size: 16px; /* readable but not huge */
+  padding: 0 0.5rem; /* small side padding only */
+  border: 1px solid #e6e6e6;
+  -moz-appearance: textfield;
+  box-sizing: border-box; /* include padding inside width */
+}
+
+.range__point {
+  font-weight: normal;
+  font-size: 20px; /* optional: control size nicely */
+  fill: #333; /* optional: slightly darker than black */
+  font-family: "Montserrat", sans-serif; /* match your rest of the page */
+}
+
+.range-wrapper {
+  width: 60%;
+  margin: 0 auto; /* centers it horizontally */
+  text-align: center; /* optional: center slider + numbers inside */
+}
+
+.small-headers {
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  margin-left: 0 auto;
+  margin-right: 0 auto;
+  text-align: center;
+}
+
+.smaller-headers {
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  margin-left: 0 auto;
+  margin-right: 0 auto;
+  text-align: center;
+  color: grey;
+}
+
+#next {
+  background-image: linear-gradient(to right, lightgrey, #008000);
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  border-radius: 25px;
+  margin: 0 auto;
+  margin-top: 30px;
+  display: block;

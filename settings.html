@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>p-invest</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="settings-header">
+      <a href="chatbot.html">
+        <img src="arrow.png" alt="Left Arrow" class="settings-left-arrow" />
+      </a>
+      <a href="chatbot.html">
+        <span class="settings-header-text">Account Settings</span>
+      </a>
+    </div>
+    <img src="avatar.png" alt="User Image" class="settings-user-img" />
+    <div class="settings-name">John Smith</div>
+    <div class="settings-container">
+      <div class="settings-info">
+        <div class="settings-bold-text">Username</div>
+        <div class="settings-light-text">johnsmith123</div>
+
+        <div class="settings-row">
+          <div class="settings-bold-text">Password</div>
+          <button class="settings-toggle-password" onclick="togglePassword()">
+            <img src="unlock.png" class="settings-lock-img" />
+          </button>
+        </div>
+        <div class="settings-light-text" id="password-field">
+          **************
+        </div>
+        <div class="settings-bold-text">API Key</div>
+        <div class="settings-light-text">12345abcde</div>
+      </div>
+      <div class="settings-logout">Log out?</div>
+    </div>
+    <script>
+      function togglePassword() {
+        const passwordField = document.getElementById("password-field");
+        const toggleButton = document.querySelector(".settings-lock-img");
+
+        if (passwordField.textContent === "**************") {
+          passwordField.textContent = "myRealPassword123"; // Replace with the actual password
+          toggleButton.textContent = "unlock.png";
+        } else {
+          passwordField.textContent = "**************";
+          toggleButton.textContent = "lock.png";
+        }
+      }
+    </script>
+  </body>
+</html>

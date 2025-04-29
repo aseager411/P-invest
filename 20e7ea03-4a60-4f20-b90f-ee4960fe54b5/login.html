@@ -20,19 +20,26 @@
 
 <center>
   <form action="/action_page.php" method="post">
-    <div class="login-container">
+    <div class="container">
       <input type="text" placeholder="Email Address" name="uname" required>
       <div class = "bar"></div>
       <input type="password" placeholder="Password" name="psw" required>
       <div class = "bar"></div>
+      <input type="text" placeholder="API Key" name="api" required>
+      <div class = "bar"></div>
       
-      <button class = "login-button" type="submit" onclick="chatbot()">Login</button>
+      <button type="submit" onclick="chatbot">Login</button>
+
     </div>
 
       <a href = "signup.html"><span class="create">Create an account<span><a>
-
-      </div>
+    </div>
   </form>
+
+                 <!-- this will be deleted but currently you can't signup unless everything matches, so just a placeholder until we intergrate the backend -->
+
+  <a href = "chatbot.html">Skip login <a>
+
 </center>
 
     <script src="script.js"></script>

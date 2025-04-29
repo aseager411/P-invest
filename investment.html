@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>p-invest</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="settings-header">
+        <a href="chatbot.html">
+            <img src="arrow.png" alt="Left Arrow" class="settings-left-arrow">
+        </a>
+        <a href="chatbot.html">
+            <span class="settings-header-text">My Investments</span>
+        </a>
+    </div>
+    <div class="investments-container"></div>
+
+    <script>
+      const container = document.querySelector('.investments-container');
+      const investments = [
+        { symbol: 'AAPL', name: 'Apple Inc.', graph: 'increase.png', price: 210.14, priceChange: 1.73 },
+        { symbol: 'MSFT', name: 'Microsoft Corp.', graph: 'increase.png', price: 391.16, priceChange: 2.56 },
+        { symbol: 'GOOGL', name: 'Alphabet Inc.', graph: 'decrease.png', price: 160.61, priceChange: -0.45 },
+        { symbol: 'AMZN', name: 'Amazon.com Inc.', graph: 'increase.png', price: 187.70, priceChange: 4.12 },
+      ];
+
+      investments.forEach(investment => {
+        const investmentElement = `
+          <a href="investment_detail.html?symbol=${encodeURIComponent(investment.symbol)}&name=${encodeURIComponent(investment.name)}&price=${investment.price}&priceChange=${investment.priceChange}" class="investment-item">
+            <div class="investment-name-container">
+              <div class="investment-symbol">${investment.symbol}</div>
+              <div class="investment-name">${investment.name}</div>
+            </div>
+            <img src="${investment.graph}" alt="Graph" class="investment-graph" />
+            <div class="investment-price-container">
+              <div class="investment-price">$${investment.price}</div>
+              <div class="investment-price-change ${
+                investment.priceChange >= 0 ? 'positive' : 'negative'
+              }">${investment.priceChange}%</div>
+            </div>
+          </a>
+        `;
+        container.innerHTML += investmentElement;
+      });
+    </script>
+  </body>
+</html>
